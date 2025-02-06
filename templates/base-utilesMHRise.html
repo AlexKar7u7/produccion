@@ -1,0 +1,299 @@
+{% extends "UtilesMHRise.html" %}
+
+{% block title %}
+Monster Hunter Hub
+{% endblock %}
+
+
+{% block nav %}
+<div class="p-5 bg-primary text-white text-center">
+    <h1>Monster Hunter Hub</h1>
+    <p>¡El lugar de donde puedes sacar toda la informacion de tu MH deseado!</p>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="mainNav">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="navbar-nav"><img src="{{ url_for('static',path='img/GStormX_Infinite_v4.png') }}" alt="" width="30" height="30"></li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/home">Inicio</a>
+            </li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Búsqueda">
+            <button class="btn btn-primary" type="button">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Búsqueda</font>
+                </font>
+            </button>
+        </form>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="text">
+    <div class="col-sm-10">
+        <h2>Utiles de caza</h2>
+        <div class="fakeimg">
+            <img src="{{ url_for('static',path='img/rise.jpg') }}" class="img-thumbnail" alt="200px">
+        </div>
+        <h1>Guía de uso del cordocóptero</h1>
+        <pre>¡Saludos cazadores! Sé que a algunos seguís sin pillarle del todo el truco al cordocóptero, así que esta guía es para ayudaros un poco.
+            
+Controles básicos del cordocóptero
+•Con el arma guardada:
+-Botones ZR+X: Salto hacia arriba y delante
+-Botones ZR+A: Salto hacia delante
+-Botones ZR+ZL: Salto hacia donde apuntes
+
+•En el aire con el arma enfundada
+-Botón A: Te mantienes en el aire unos instantes. Si pulsas "B", harás un tirabuzón para moverte rápido donde estés apuntando con el botón de movimiento
+
+•Si te han dado un tortazo y sales volando:
+-Botones ZR+B: Reincorporarte en el aire
+
+•Con el arma desenfundada (si llevas un arma a distancia)
+-Botones R+X: Esquive
+-Botones R+A: Habilidad de mejora física/daño
+
+•Con el arma desenfundada (arma de daño cuerpo a cuerpo)
+-Botones ZR+X: Esquive
+-Botones ZR+A: Habilidad de mejora física/daño
+
+Cordocóptero en ataques
+Pese a que pueda parecer que algunas habilidades del cordocóptero con armas no sirvan de mucho, estas permiten a los cazadores hacer un dash rápido, 
+que para esquivar ataques no está nada mal. 
+¡De todas formas, probad a atacar después de usarla! 
+Porque a lo mejor os dáis cuenta de que no estábais sacándole todo el partido como deberíais a la habilidad. 
+__
+Cordocóptero para escalar
+"¿Véis cómo los demás son copias de spiderman y parece que han estado entrenando con el equipo tridimensional toda su vida? No lo flipéis, no es para tanto."
+
+A la hora de escalar, sólo tenéis que estar pendientes de dos cosas: La estamina o resistencia y el tiempo de recarga de cada cordocóptero.
+
+El truco es usar el cordocóptero contra una pared. Pulsáis el botón R (el de correr) mientras os movéis hacia arriba. 
+Así, llegará un momento en el que os quedaréis sin resistencia y el personaje saltará.
+
+En ese momento, esperaréis a que el personaje llegue al punto más álto del salto, y usaréis el otro cordocóptero contra la misma pared. 
+Veréis cómo habréis recuperado al menos una parte de la resistencia, que usaréis para volver a correr por la pared. En ese momento, 
+ya habréis recuperado el primer cordocóptero. Y así sucesivamente, hasta que consigáis llegar a la luna.
+
+Esto es todo por hoy. Espero que esto os haya ayudado un poco a la hora de escalar.
+
+Un saludo de vuestro amigo y vecino, AlexKar</pre>
+        <a
+            href="https://vandal.elespanol.com/guias/guia-monster-hunter-rise-trucos-consejos-y-secretos/conseguir-zenis">
+            <h1>Guía para conseguir muchos zenis</h1>
+        </a>
+        <a
+            href="https://vandal.elespanol.com/guias/guia-monster-hunter-rise-trucos-consejos-y-secretos/conseguir-puntos-kamura">
+            <h1>Guía para conseguir muchos puntos Kamura</h1>
+        </a>
+        <h1>Peticiones de desbloqueo del resto de submarinos del Argosy</h1>
+        <pre>
+¡Saludos cazador!
+En caso de que estés desesperado buscando los objetos para completar alguna de las peticiones para desbloquear el segundo o tercer submarino para el Argosy, 
+no te preocupes. En esta miniguía te explicaré dónde conseguir cada uno de los objetos que te piden. 
+
+(Marco en spoiler cada una de las peticiones para que aquellos que quieran conseguir los objetos por su cuenta no lo vean si no quieren.)
+
+Como pista os diré que podéis encontrarlos todos en misiones de exploración de rango bajo, sea en la aldea o en el gremio, 
+pero los objetos que buscamos tienen un porcentaje de salir o no, por lo que a lo mejor tendrás que esperar a que algún punto de recolección reaparezca o 
+repetir la misión varias veces.
+Dicho esto, aquí tienes las ubicaciones. 
+¡Suerte compis!
+
+PD: Como el primer submarino lo tenemos desbloqueado de base, para hablar de los siguientes, nos referiremos a ellos como el "segundo" y "tercer" submarino.
+
+Conseguir el segundo submarino
+Cuando desbloquees la petición para desbloquear el segundo submarino, la capitana del Argosy te pedirá reunir lo siguiente:
+-x3 Farolillos fatuos:
+Mapa: Templo Olvidado.
+Zonas: 1, 11, 13, entre las zonas 7 y 3, entre las zonas 10 y 6, entre las zonas 10 y 12.
+Icono en el mapa (Interrogante rojo) y forma en la que se ve:
+        </pre>
+        <img src="{{ url_for('static',path='img/img1.png') }}" class="img-thumbnail" alt="200px">
+        <pre>
+-x3 Botelmejas:
+Mapa: Islas Heladas
+Zonas: Entre las zonas 4 y 5, entre las zonas 4 y 7, entre las zonas 7 y 8, entre las zonas 8 y 10, entre las zonas 10 y 3.
+Icono en el mapa (Interrogante negro) y forma en la que se ve:
+        </pre>
+        <img src="{{ url_for('static',path='img/img2.png') }}" class="img-thumbnail" alt="200px">
+        <pre>
+---------------------------------------------------------------------
+Conseguir el tercer submarino
+Cuando llegues a rango alto en el gremio, desbloquearás la petición para el tercer submarino, en la que te pedirán reunir: 
+-x1 Escarabajo Rey: 
+Mapa: Bosque inundado.
+Zonas: Detrás de la pirámide.
+Icono en el mapa (Interrogante azul) y forma en la que se ve:
+        </pre>
+        <img src="{{ url_for('static',path='img/img3.png') }}" class="img-thumbnail" alt="200px">
+        <pre>
+-x3 Rosas Rocosas: 
+Mapa: Llanos Arenosos
+Zonas: 2, 12, entre la 4 y la 5, entre la 10 y la 11.
+Icono en el mapa (Interrogante naranja) y forma en la que se ve:
+        </pre>
+        <img src="{{ url_for('static',path='img/img4.png') }}" class="img-thumbnail" alt="200px">
+        <pre>
+-x3 Prismas de bismuto: 
+Mapa: Gruta de lava
+Zonas: Entre la 6 y 9, entre la 6 y 8, entre la 10 y 14.
+
+PD: Entre las zonas 10 y 14, encontrarás que puedes minar en una pared de cristales parecidos a los de la foto, 
+e incluso tendrán el mismo icono en el mapa. Ese punto de recolección te dará minerales enormes que puedes llevar como si fueran huevos, 
+pero NO NOS SIRVEN para la petición.
+
+Icono en el mapa (Interrogante morado) y forma en la que se ve:
+        </pre>
+        <img src="{{ url_for('static',path='img/img5.png') }}" class="img-thumbnail" alt="200px">
+        <pre>
+Siento que se vean pixeladas las capturas del mapa, pero espero que esa info os ayude aunque sea un poco a poder completar las peticiones más fácilmente. 
+¡Chaop!
+        </pre>
+        <h1>Localizaciones de los diarios (con algunos comentarios en inglés)</h1>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/-wswIpkXROE"
+            title="MHRise | All 60 Secret Message Locations" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <h1>Guía para talismanes</h1>
+        <p>Una pequeña guía para saber sobre los talismanes y como funciona el maxifusionador</p>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/c81kt55uoR0"
+            title="Guía: Así funciona el Maxifusionador - Talismanes raros | MH Rise" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <h1>Guía farmeo de zenits (en inglés, por @JAVIICII )</h1>
+        <pre>
+Les dejo una ruta para los que ocupan zenis en rise, haces como 500mil en 15/20 min
+
+Para que rente todo esto, debes esperar a que en la información de entorno expedición de rango alto te ponga: "abundancia de yacimientos de minerales", 
+o a menos llevar la habilidad geólogo 3, que hace que al minar te den más minerales.
+
+En caso de que hayas entrado a la misión con abundancia de yacimientos minerales y por permanecer un tiempo ahí haya cambiado el entorno, 
+te conviene volver a mirar la información del entorno. En caso de que no esté la abundancia de yacimientos, 
+renta salir de misión y volver cuando vuelva a salir lo dicho en la información de misión.
+        </pre>
+        <img src="{{ url_for('static',path='img/img6.png') }}" class="img-thumbnail" alt="200px">
+        <a
+            href="https://www.reddit.com/r/MonsterHunter/comments/mm4or0/here_are_the_updated_cheat_sheets_for_all_weapons/?utm_medium=android_app&utm_source=share">
+            <h1>Guía sobre información de las habilidades (en inglés, por @Durzo)</h1>
+        </a>
+        <h1>Guía de los materiales más buscados</h1>
+        <pre>
+Buenas a todos, aquí debajo os pongo una lista de objetos del MH Rise que la gente ha estado pidiendo mucho estos días:
+
+========================================
+
+Pedidos del Argosy
+Estos pedidos podemos realizarlos al hablar con Rondine, la representante de El Argosy, que se encuentra en la plaza Camarada:
+
+• Kumori tóxico: Pedidos de hierbas y peces.
+• Valva onírica: Pedidos de miel, bichos y setas.
+• Dosbiscus: Pedidos de semillas y bayas.
+
+========================================
+
+• Machalita: Podemos obtener este objeto principalmente de dos formas: 
+-Cazando Basarios de Rango Bajo.
+-Recogiendo afloramientos mineros en el mapa de Llanos arenosos que será un escenario perfecto, 
+ya que cuenta con diversos afloramientos en los que podemos conseguir este mineral.
+
+========================================
+
+• Vesícula preciosa: Podemos obtenerla con Altaroth de Rango Alto, ya sea con materiales caídos o carveo. 
+Si queremos carvear, un buen método es utilizar la Bola de humo venenoso.
+
+========================================
+
+• Supercalabazón: Se consigue al enviar a los Miaurcenarios a misiones en el mapa del Bosque inundado.
+
+======================================== 
+
+• Mención de honor: Al completar misiones de varios monstruos nos la pueden otorgar en la recompensa. 
+En lugar de ir al Gremio, donde nos encontraremos con una mayor dificultad, una forma sencilla de obtenerla es completar misiones de 6★ en la aldea, 
+en concreto: Prueba de valor, Como un relámpago y El rey azota la tierra.
+
+======================================== 
+
+•Medusa Mona: Se consigue al enviar a los Miaurcenarios a pescar al volcán (en rango bajo).
+•Medusa Gótica: Se consigue al enviar a los Miaurcenarios a pescar al volcán (en rango alto).
+. 
+========================================
+
+• Pez arpón: Pese a que también puedes obtener alguno si mandas a los Miaurcenarios a por peces a las Islas Heladas en rango alto, 
+lo más fácil y efectivo es ir por ti mismo. Salen sobre todo en el punto de pesca de la zona 3 de ese mismo mapa en rango alto. 
+Paso fotografía de cómo se ven (en el minimapa también está el lugar exacto para pescarlos):
+        </pre>
+        <img src="{{ url_for('static',path='img/img7.jpg') }}" class="img-thumbnail" alt="200px">
+        <h1>Guía de las debilidades elementales de cada monstruo</h1>
+        <img src="{{ url_for('static',path='img/img8.png') }}" class="img-thumbnail" alt="200px">
+        <h1>Guía de desbloqueo de las habilidades de cordocóptero (por @Aurin )</h1>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/jOn3_gtvvA4"
+            title="Monster Hunter: Rise - Desbloquear habilidades intercambiables - Guía rápida" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <a
+            href="https://www.reddit.com/r/MonsterHunter/comments/muxpj4/having_trouble_finding_relics_heres_a_list_of/?utm_medium=android_app&utm_source=share">
+            <h1>Guía efectos y desbloqueos de los Dangos (por @Durzo)</h1>
+        </a>
+        <img src="{{ url_for('static',path='img/img9.png') }}" class="img-thumbnail" alt="200px">
+        <a
+            href="https://docs.google.com/spreadsheets/d/1JExw9hUqNdZoTVx_iuWPFxn-c47aXbQWW6kDawqTZsc/edit?usp=drivesdk">
+            <h1>Enlace de las traducciones de las habilidades (por @jetwhistle)</h1>
+        </a>
+        <h1>guía de cupones</h1>
+        <img src="{{ url_for('static',path='img/img10.png') }}" class="img-thumbnail" alt="200px">
+        <h1>Guía para pillar todos los peces del juego (por @Aurin )</h1>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/RFkFzb2P4M4"
+            title="¿Como Conseguir todos los peces? | Monster Hunter Rise" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+            <h1>Guía de farmeo de Zenits mejorada </h1>
+            <pre>
+(Necesitas geólogo 3)
+- Del punto 1 al 3, no hay mucho que decir, sólo seguir la línea. 
+- En el punto 3, tras picar, nos tiramos por el agujero del suelo, y seguimos el camino que marca la línea roja, 
+cogiendo el cordóptero que hay en el sitio.
+- Del punto 6 al 7, hay que escalar la montaña, pero a la mitad de la pared veremos un túnel. (Es donde se encuentra una reliquia).
+- Tras picar en el 7, salimos en la dirección que marca la línea. Picamos en el 8.
+- Tras el punto 8, nos transportamos al Campamento 1, y nada más aparecer, veremos un punto de minado (el 9).
+- Tras el 9, seguimos la línea, y el punto 10 estará en la pirámide pequeña.
+- Saltamos por encima de los troncos que hay cerca del punto 10, que forman un puente, y debajo estará el 11.
+- Seguimos la línea, y a medio camino cogemos el cordóptero. 
+La línea acaba en el gran cordóptero, lo usamos y cuando acabe el impulso, más o menos donde sale el punto negro, 
+usamos nuestro cordóptero para movernos a esa altura por la pirámide, donde en el lado sur, veremos una apertura. 
+Entramos ahí y estarán los puntos 12 y 13.
+- Salimos de la habitación donde están los puntos 12 y 13, y hacemos lo mismo que antes con nuestro cordóptero, 
+para movernos a la cara este de la pirámide. Acabaremos en el habitáculo de la fauna rara local, y ahí tendremos el punto 14.
+- Tras esto, salimos, y bajamos, siguiendo la línea que marca el camino, y tendremos los 2 últimos puntos de minería.
+
+Si queremos, podemos seguir hasta que deje de haber esa abundancia de minería. O le damos a completar misión y vendemos todo lo que nos ha dado.
+Los cordópteros que nos encontremos, nos ayudarán a movernos con mayor facilidad por el entorno.
+Para hacerlo más rápido, se debe ir con Canyne, para hacer más rápidos los trayectos más largos.
+
+(Imagen y texto hechos por @HuerToDah, de un video de Gaijin Hunter)
+
+🔵  Puntos de minería del nivel superior
+🟢  Puntos de minería del subsuelo
+
+            </pre>
+            <img src="{{ url_for('static',path='img/img11.png') }}" class="img-thumbnail" alt="200px">
+            <p>---------------------------------------------------------------------</p>
+            <pre>
+¡Saludos cazadores!
+
+Hoy vengo a enseñaros una aplicación de Play Store (esperemos que en ios este también), que podéis usar a modo de complemento para ayudaros con el juego.
+
+Su nombre es MHRise Companion, y pese a que tiene anuncios que no molestan a la hora de buscar lo que necesites, si tu móvil está en castellano, 
+se adapta a ese idioma.
+
+Dicho esto, paso alguna imagen y el <a href="https://play.google.com/store/apps/details?id=com.SoftwareNotion.MHRiseCompanion&hl=es_419">link de la página de Play Store.</a> 
+
+¡Un saludo y suerte cazando!
+
+            </pre>
+
+    </div>
+{% endblock %}

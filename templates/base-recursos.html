@@ -1,0 +1,44 @@
+{% extends "Recursos.html" %}
+
+{% block title %}
+Monster Hunter Hub
+{% endblock %}
+
+
+{% block nav %}
+    <div class="p-5 bg-primary text-white text-center">
+        <h1>Monster Hunter Hub</h1>
+        <p>¡El lugar de donde puedes sacar toda la informacion de tu MH deseado!</p>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="mainNav">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="navbar-nav"><img src="{{ url_for('static',path='img/GStormX_Infinite_v4.png') }}" alt="" width="30" height="30"></li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/home">Inicio</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Búsqueda">
+                <button class="btn btn-primary" type="button">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Búsqueda</font>
+                    </font>
+                </button>
+            </form>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+<div class="text">
+    <div class="col-sm-5">
+        <h2>Utiles de caza</h2>
+        <div class="fakeimg">
+            <img src="{{ url_for('static',path='img/foto utiles de caza.jpg') }}" class="img-thumbnail" alt="200px">
+        </div>
+        <p>La franquicia Monster Hunter (モンスターハンター Monsutā Hantā?, lit. Cazador de monstruos) tiene un monton de
+            informacion, mecanicas, objetos por cada entrega, y en cada entrega hay algo diferente que las
+            diferencia, por eso, esta esta seccion, para ayudar en cada entrega,<a href="utilesrise">MHRise</a></p>
+    </div>
+{% endblock %}

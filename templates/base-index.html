@@ -1,0 +1,1963 @@
+{% extends "index.html" %}
+
+{% block title %}
+Monster Hunter Hub
+{% endblock %}
+
+{% block nav %}
+<div class="p-5 bg-primary text-white text-center">
+    <h1>Monster Hunter Hub</h1>
+    <p>¡El lugar de donde puedes sacar toda la información de tu MH deseado!</p>
+</div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="mainNav">
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <li class="navbar-nav"><img src="{{ url_for('static',path='img/GStormX_Infinite_v4.png') }}" alt="" width="30" height="30"></li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/home">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/registrarse">Registrarse</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/recursos">Recursos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Información</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Búsqueda">
+            <button class="btn btn-primary" type="button">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Búsqueda</font>
+                </font>
+            </button>
+        </form>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>Sobre mí:</h2>
+            <div class="fakeimg">
+                <img src="{{ url_for('static',path='img/sichicos.jpg') }}" class="img-thumbnail" alt="200px">
+            </div>
+            <p>Simplemente soy un estudiante primerizo en este mundillo de la creación de las paginas HTML, soy
+                estudiante de 2ASIR y voy a hacer
+                esta pagina para tanto mi proyecto de clase como para mi comunidad de discord, mi nombre es
+                Alejandro Moises (discord: AlexKar) y bienvenidos
+                a mi pagina web.
+            </p>
+            <h3 class="mt-4">Links</h3>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/usuarios">Administrar Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-8">
+            <h2>¿Que es Monster Hunter?</h2>
+            <div class="fakeimg">
+                <img src="{{ url_for('static',path='img/Monster-Hunter-Logo-2004.png') }}" class="img-thumbnail" alt="200px">
+            </div>
+            <p>
+                Monster hunter logo
+            </p>
+            <p>
+                La franquicia Monster Hunter (モンスターハンター Monsutā Hantā?, lit. Cazador de monstruos) es una serie de
+                videojuegos de rol de acción con temática fantástica que comenzó con el videojuego Monster Hunter
+                para PlayStation 2, lanzado en 2004. Los títulos han sido publicados en una variedad de plataformas,
+                que incluyen computadoras personales, consolas domésticas, consolas portátiles y dispositivos
+                móviles. La serie es desarrollada y publicada por Capcom.
+            </p>
+            <br>
+            <p>
+                Los videojuegos son principalmente videojuegos de rol de acción. El jugador asume el papel de un
+                cazador, que debe matar o atrapar monstruos grandes en varios entornos como parte de las misiones
+                que les dan los locales. Como parte de su jugabilidad principal, los jugadores utilizan el botín
+                obtenido al matar monstruos, reunir recursos y recompensas de misiones para crear armas, armaduras y
+                otros objetos mejorados que les permitan enfrentarse a monstruos más poderosos. Todos los
+                videojuegos de la serie principal cuentan con un modo multijugador (por lo general, hasta cuatro
+                jugadores en partidas cooperativas), pero también se permite el modo de un solo jugador.
+            </p>
+            <h2 class="mt-5">
+                ¿Cuantos titulos han sacado?
+            </h2>
+            <p>
+                Monster Hunter es una saga de videojuegos creada por Capcom, con títulos en nuestra base de datos
+                desde 2005 y que actualmente cuenta con un total de 38 juegos para Switch, Xbox One, PSVITA, PS4,
+                Android, Nintendo 3DS, Wii U, PS3, iPhone, Xbox 360, Wii, PC, PSP, PS2.
+
+                En esta página encontrarás el listado completo con todos los juegos de Monster Hunter que existen,
+                ordenados según su fecha de lanzamiento para que puedas saber cuál es el último juego de Monster
+                Hunter que se ha anunciado o que ya ha salido a la venta, y cuál fue el primer juego de todos con el
+                que se inició la saga.
+
+                Además te mostramos la nota que le han dado nuestros analistas a todas las entregas que han ido
+                saliendo, para que sepas cuál es el mejor juego de Monster Hunter de toda la historia.
+            </p>
+            <a href="https://vandal.elespanol.com/sagas/monster-hunter">
+                Página de referencia.
+            </a>
+        </div>
+    </div>
+</div>
+<table id="tablaordenada" class="table table-striped" cellpadding="0" cellspacing="0">
+    <tbody>
+        <tr>
+            <th style="width:40px;">
+                <a data-orden="asc" id="tablaordenada-ordenar-0" href="javascript:void(0);"
+                    onclick="sortTable('tablaordenada',0,e('tablaordenada-ordenar-0').getAttribute('data-orden'));">
+                    Año
+                    <span id="tablaordenada-direccion-0">
+                        ↓
+                    </span>
+                </a>
+            </th>
+            <th>
+                <a class="fright" data-orden="desc" id="tablaordenada-ordenar-1" href="javascript:void(0);"
+                    onclick="sortTable('tablaordenada',1,e('tablaordenada-ordenar-1').getAttribute('data-orden'));">
+                    Nota
+                    <span id="tablaordenada-direccion-1">
+                        ↑
+                    </span>
+                </a>
+                Juego
+            </th>
+        </tr>
+        <tr>
+            <td data-ordenar="20221231">
+                2022
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1"></div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://as.com/meristation/juegos/monster_hunter_riders/"
+                        title="Monster Hunter Riders para Android">
+                        <strong>
+                            Monster Hunter Riders
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/android/monster-hunter-riders/81543#p-53">
+                            <span class="color53">
+                                iPhone
+                            </span>
+                        </a>
+                        <a href="/juegos/android/monster-hunter-riders/81543#p-71">
+                            <span class="color71">
+                                Android
+                            </span>
+                        </a>
+                        · Año 2022
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20220629">
+                2022
+            </td>
+            <td data-ordenar="8.7">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="https://www.monsterhunter.com/rise-sunbreak/es/product-switch/">
+                            <img style="width:100px; height:162px"
+                                src="https://media.vandal.net/100/116435/monster-hunter-rise-sunbreak-202263183116_1b.jpg"
+                                width="100" alt="Monster Hunter Rise: Sunbreak para Nintendo Switch">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/switch/monster-hunter-rise-sunbreak/116435">
+                                    8.7
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/switch/monster-hunter-rise-sunbreak/116435"
+                        title="Monster Hunter Rise: Sunbreak para Nintendo Switch">
+                        <strong>
+                            Monster Hunter Rise: Sunbreak
+                        </strong>
+                    </a>
+                    (Action-RPG / Aventura de acción)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-rise-sunbreak/116435#p-83">
+                            <span class="color83">
+                                Switch
+                            </span>
+                        </a>
+                        · 30/6/2022
+                    </div>
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-rise-sunbreak/116435#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · 29/6/2022
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20210708">
+                2021
+            </td>
+            <td data-ordenar="8">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="https://www.monsterhunter.com/stories2/es/">
+                            <img style="width:100px; height:100px"
+                                src="https://media.vandal.net/100/90553/monster-hunter-stories-2-wings-of-ruin-20213269371281_7b.jpg"
+                                width="100" alt="Monster Hunter Stories 2: Wings of Ruin para Nintendo Switch">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/switch/monster-hunter-stories-2-wings-of-ruin/90553">
+                                    8
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/switch/monster-hunter-stories-2-wings-of-ruin/90553"
+                        title="Monster Hunter Stories 2: Wings of Ruin para Nintendo Switch">
+                        <strong>
+                            Monster Hunter Stories 2: Wings of Ruin
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-stories-2-wings-of-ruin/90553#p-83">
+                            <span class="color83">
+                                Switch
+                            </span>
+                        </a>
+                        · 9/7/2021
+                    </div>
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-stories-2-wings-of-ruin/90553#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · 8/7/2021
+                    </div>
+                </div>
+                <div class="mt05">
+                    <i>Monster Hunter Stories: 2 Wings of Ruin</i> es la nueva entrega de
+                    <b>videojuegos de rol y caza de monstruos</b> de Capcom para <b>Nintendo Switch.</b> En esta
+                    secuela del spinoff para Nintendo 3DS, viviremos una experiencia cercana a los juegos de rol
+                    japoneses, pero sin olvidar el coleccionismo de criaturas y batallas propia de la asentada
+                    licencia <i>Monster Hunter.</i>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20210326">
+                2021
+            </td>
+            <td data-ordenar="9.2">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="https://www.monsterhunter.com/rise/es/">
+                            <img style="width:100px; height:161px"
+                                src="https://media.vandal.net/100/90551/monster-hunter-rise-202091717225295_6b.jpg"
+                                width="100" alt="Monster Hunter Rise para Nintendo Switch">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/switch/monster-hunter-rise/90551">
+                                    9.2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/switch/monster-hunter-rise/90551"
+                        title="Monster Hunter Rise para Nintendo Switch">
+                        <strong>
+                            Monster Hunter Rise
+                        </strong>
+                    </a>
+                    (Action-RPG / Aventura de acción)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-89">
+                            <span class="color89">
+                                PS5
+                            </span>
+                        </a>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-73">
+                            <span class="color73">
+                                PS4
+                            </span>
+                        </a>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-97">
+                            <span class="color97">
+                                XSX
+                            </span>
+                        </a>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-79">
+                            <span class="color79">
+                                XBOne
+                            </span>
+                        </a>
+                        · 20/1/2023
+                    </div>
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · 12/1/2022
+                    </div>
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-rise/90551#p-83">
+                            <span class="color83">
+                                Switch
+                            </span>
+                        </a>
+                        · 26/3/2021
+                    </div>
+                </div>
+                <div class="mt05">
+                    <i><b>Monster Hunter Rise</b></i> es la nueva entrega de la <b>saga de acción en
+                        tercera person</b>a <i>Monster Hunter</i> de <b>Capcom</b> para <b>Nintendo Switch</b>. En
+                    esta secuela, que volverá a <b>invitarnos a cazar enormes criaturas</b>, crear grandes armas y
+                    armaduras y enfrentarnos a <b>dragones y seres de todo tipo</b>, se busca ofrecer <b>un gran
+                        mundo abierto</b> sin saltos de una región a otra, potenciado los distintos niveles para dar
+                    más verticalidad y altura.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20191220">
+                2019
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <span class="falsolink" data-ruta="'juegos','pc','monster-hunter-vr','80008'" noborrar="1">
+                            <img style="width:100px; height:46px"
+                                src="https://media.vandal.net/100/12-2019/monster-hunter-vr-20191249271597_6b.jpg"
+                                width="100" alt="Monster Hunter VR para Ordenador">
+                        </span>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="falsolink" data-ruta="'juegos','pc','monster-hunter-vr','80008'"
+                        title="Monster Hunter VR para Ordenador" noborrar="1">
+                        <strong>Monster Hunter VR</strong>
+                    </span>
+                    (Realidad Virtual / Shooter en primera persona)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <span class="falsolink" data-ruta="'juegos','pc','monster-hunter-vr','80008#p-13'"
+                            noborrar="1">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </span>
+                        · 20/12/2019
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20190906">
+                2019
+            </td>
+            <td data-ordenar="9.2">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="https://www.monsterhunter.com/world-iceborne/es/">
+                            <img style="width:100px; height:124px"
+                                src="https://media.vandal.net/100/76358/monster-hunter-world-iceborne-2019813141405_1b.jpg"
+                                width="100" alt="Monster Hunter World: Iceborne para PlayStation 4">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/ps4/monster-hunter-world-iceborne/76358">
+                                    9.2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps4/monster-hunter-world-iceborne/76358"
+                        title="Monster Hunter World: Iceborne para PlayStation 4">
+                        <strong>
+                            Monster Hunter World: Iceborne
+                        </strong>
+                    </a>
+                    (Action-RPG / Aventura de acción / Mundo abierto)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-world-iceborne/76358#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · 9/1/2020
+                    </div>
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-world-iceborne/76358#p-73">
+                            <span class="color73">
+                                PS4
+                            </span>
+                        </a>
+                        <a href="/juegos/ps4/monster-hunter-world-iceborne/76358#p-79">
+                            <span class="color79">
+                                XBOne
+                            </span>
+                        </a>
+                        · 6/9/2019
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter World: Iceborne es la nueva expansión del exitoso Monster Hunter
+                    World de Capcom, un juego en el que cazamos monstruos de gran tamaño y mejoramos nuestras
+                    características con las bestias que abatimos. En Iceborne, los usuarios se unirán a la Comisión
+                    de Investigación para explorar las tierras heladas del Hoarfrost Reach, que será el mayor mapa
+                    del juego. Seguiremos la pista de Legiana, desde el Bosque Antiguo hasta una nueva localización
+                    fría, remota y muy peligrosa, toda cubierta de hielo. De esta forma, deberemos establecer un
+                    nuevo campamento bautizado como Seliana y combatir contra nuevas criaturas, monstruos y
+                    animales, contando entre ellas con alguna que otra incorporación clásica como la de Tigrex.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20180828">
+                2018
+            </td>
+            <td data-ordenar="8.5">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/switch/monster-hunter-generations-ultimate/48685">
+                            <img style="width:100px; height:161px"
+                                src="https://media.vandal.net/100/48685/monster-hunter-generations-ultimate-2018828103846_7b.jpg"
+                                width="100" alt="Monster Hunter Generations Ultimate para Nintendo Switch">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/switch/monster-hunter-generations-ultimate/48685">
+                                    8.5
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/switch/monster-hunter-generations-ultimate/48685"
+                        title="Monster Hunter Generations Ultimate para Nintendo Switch">
+                        <strong>
+                            Monster Hunter Generations Ultimate
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/switch/monster-hunter-generations-ultimate/48685#p-83">
+                            <span class="color83">
+                                Switch
+                            </span>
+                        </a>
+                        · 28/8/2018
+                    </div>
+                </div>
+                <div class="mt05">
+                    <b><i>Monster Hunter Generations Ultimate</i></b> es el debut de la famosa saga de
+                    cazadores de monstruos <b><i>Monster Hunter</i></b> de Capcom en <b>Nintendo Switch</b>. Como
+                    otros videojuegos de la serie, nos invitará a <b>abatir grandes criaturas</b> en forma de
+                    bestias y dragones mientras exploramos un mundo medieval con toques <i>steampunk</i>. Esta
+                    versión es la edición extendida de <i>Monster Hunter Generations</i>, el videojuego de Nintendo
+                    3DS, que en esta ocasión amplía su duración, sus criaturas y sus contenidos.<p></p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20180126">
+                2018
+            </td>
+            <td data-ordenar="9.1">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps4/monster-hunter-world/49146">
+                            <img style="width:100px; height:123px"
+                                src="https://media.vandal.net/100/49146/monster-hunter-world-2018128121611_1b.jpg"
+                                width="100" alt="Monster Hunter World para PlayStation 4">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/ps4/monster-hunter-world/49146">
+                                    9.1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps4/monster-hunter-world/49146"
+                        title="Monster Hunter World para PlayStation 4">
+                        <strong>
+                            Monster Hunter World
+                        </strong>
+                    </a>
+                    (Action-RPG / Mundo abierto)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-world/49146#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · 9/8/2018
+                    </div>
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-world/49146#p-73">
+                            <span class="color73">
+                                PS4
+                            </span>
+                        </a>
+                        <a href="/juegos/ps4/monster-hunter-world/49146#p-79">
+                            <span class="color79">
+                                XBOne
+                            </span>
+                        </a>
+                        · 26/1/2018
+                    </div>
+                </div>
+                <div class="mt05">
+                    <b>Monster Hunter World es</b> el retorno de la serie a las consolas de sobremesa,
+                    permitiéndonos cazar criaturas gigantes en un entorno salvaje, ya sea en solitario o con tres
+                    cazadores con un nuevo sistema multijugador drop-in que permite cooperativo entre regiones.
+                    Mantendrá las señas de identidad, su sistema de creación y equipamiento para cazar monstruos,
+                    mientras mejoramos nuestras habilidades. Los recursos se podrán utilizar para mejoras y otro
+                    equipamiento. Su jugabilidad facilita explorar el mapa sin transiciones, con ciclo horario.
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td data-ordenar="20171231">
+                2017
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-xx/43170">
+                            <img style="width:100px; height:88px"
+                                src="https://media.vandal.net/100/43170/monster-hunter-xx-2019122413261785_1b.jpg"
+                                width="100" alt="Monster Hunter XX para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-xx/43170" title="Monster Hunter XX para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter XX
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-xx/43170#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · Año 2017
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter XX ya está disponible Japón en exclusiva para Nintendo 3DS. Esta
+                    nueva entrega es una versión extendida y mejorada de Monster Hunter Generations que añadirá dos
+                    nuevos estilos de caza y el demandado Rango G, junto con nuevas armas, habilidades y mapas en
+                    los que cazar. Además, incorpora nuevas colaboraciones, trajes y armaduras. Su lanzamiento en
+                    Occidente no ha sido confirmado de momento.
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td data-ordenar="20170908">
+                2017
+            </td>
+            <td data-ordenar="8.2">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-stories/30424">
+                            <img style="width:100px; height:91px"
+                                src="https://media.vandal.net/100/30424/monster-hunter-stories-2017418192914_1b.jpg"
+                                width="100" alt="Monster Hunter Stories para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/3ds/monster-hunter-stories/30424">
+                                    8.2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-stories/30424"
+                        title="Monster Hunter Stories para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter Stories
+                        </strong>
+                    </a>
+                    (JRPG / Rol)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-stories/30424#p-71">
+                            <span class="color71">
+                                Android
+                            </span>
+                        </a>
+                        <a href="/juegos/3ds/monster-hunter-stories/30424#p-53">
+                            <span class="color53">
+                                iPhone
+                            </span>
+                        </a>
+                        · 25/9/2018
+                    </div>
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-stories/30424#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · 8/9/2017
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Stories es un título de la saga Monster Hunter que tomará un camino
+                    más enfocado al RPG japonés. De esta forma, contará con un sistema de combate por turnos y
+                    apostará por una vertiente más clásica y de rol tradicional, a diferencia de las entregas
+                    principales de la serie.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20161130">
+                2016
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627">
+                            <img style="width:100px; height:56px"
+                                src="https://media.vandal.net/100/22374/monster-hunter-frontier-z-201922512195113_1b.jpg"
+                                width="100" alt="Monster Hunter Frontier Z para PlayStation 4">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps4/monster-hunter-frontier-z/41627"
+                        title="Monster Hunter Frontier Z para PlayStation 4">
+                        <strong>
+                            Monster Hunter Frontier Z
+                        </strong>
+                    </a>
+                    (Action-RPG / MMO)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627#p-61">
+                            <span class="color61">
+                                PSVITA
+                            </span>
+                        </a>
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627#p-73">
+                            <span class="color73">
+                                PS4
+                            </span>
+                        </a>
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · Noviembre 2016
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Frontier es un juego online que nunca ha conseguido salir de Japón
+                    y cuya última expansión incluyó más monstruos, armas, armaduras, escenarios y habilidades. En
+                    Japón es un título que requiere de cuotas mensuales y Capcom quiere lanzarlo en Occidente en un
+                    futuro.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20160715">
+                2016
+            </td>
+            <td data-ordenar="8.5">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-generations/31321">
+                            <img style="width:100px; height:88px"
+                                src="https://media.vandal.net/100/31321/monster-hunter-generations-2016715124624_37b.jpg"
+                                width="100" alt="Monster Hunter Generations para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/3ds/monster-hunter-generations/31321">
+                                    8.5
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-generations/31321"
+                        title="Monster Hunter Generations para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter Generations
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-generations/31321#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · 15/7/2016
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter X es una nueva entrega de esta popular saga de caza de monstruos
+                    diseñado en exclusiva para Nintendo 3DS, que nos ofrecerá grandes dosis de exploración en un
+                    mundo fantástico recreado en tres dimensiones, nuevas criaturas para combatir y abatir, armas
+                    completamente inéditas y mecánicas novedosas.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20150930">
+                2015
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-diary-poka-poka-palico-village-dx/31326">
+                            <img style="width:100px; height:88px"
+                                src="https://media.vandal.net/100/31326/monster-hunter-diary-poka-poka-palico-village-dx-20192317101423_1b.jpg"
+                                width="100"
+                                alt="Monster Hunter Diary: Poka Poka Palico Village DX para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-diary-poka-poka-palico-village-dx/31326"
+                        title="Monster Hunter Diary: Poka Poka Palico Village DX para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter Diary: Poka Poka Palico Village DX
+                        </strong>
+                    </a>
+                    (JRPG / Rol)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-diary-poka-poka-palico-village-dx/31326#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · Septiembre 2015
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Diary: Poka Poka Palico Village DX es un nuevo spin-off de la
+                    popular saga de caza de criaturas de Capcom y busca ofrecer un híbrido entre las características
+                    propias de la serie principal con la jugabilidad de títulos como Animal Crossing. Es una versión
+                    actualizada para Nintendo 3DS del título que se lanzó originalmente para PSP en 2010, aunque
+                    este nunca consiguió salir de Japón. En él podremos personalizar a nuestros personajes,
+                    participar en multitud de minijuegos y afrontar misiones de caza.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20150213">
+                2015
+            </td>
+            <td data-ordenar="9.2">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-4-ultimate/23280">
+                            <img style="width:100px; height:89px"
+                                src="https://media.vandal.net/100/23280/monster-hunter-4-ultimate-2015212153025_1b.jpg"
+                                width="100" alt="Monster Hunter 4 Ultimate para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/3ds/monster-hunter-4-ultimate/23280">
+                                    9.2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-4-ultimate/23280"
+                        title="Monster Hunter 4 Ultimate para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter 4 Ultimate
+                        </strong>
+                    </a>
+                    (Action-RPG / JRPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-4-ultimate/23280#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · 13/2/2015
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter 4 Ultimate para Nintendo 3DS es una nueva entrega de la saga
+                    Monster Hunter para la consola portátil de Nintendo. Se trata de la cuarta parte de esta saga de
+                    cazar monstruos, que soportará el pad de expansión de la consola, con un apartado gráfico
+                    novedoso y más parecido al de Monster Hunter Unite. Contaremos con nuevos escenarios, criaturas
+                    que cazar y habilidades, además de colaboraciones con otras sagas, como One Piece.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20140703">
+                2014
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/iphone/monster-hunter-freedom-unite-for-ios/24709">
+                            <img style="width:100px; height:142px"
+                                src="https://media.vandal.net/100/24709/monster-hunter-freedom-unite-for-ios-20146711217_1b.jpg"
+                                width="100" alt="Monster Hunter Freedom Unite for iOS para iPhone">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/iphone/monster-hunter-freedom-unite-for-ios/24709"
+                        title="Monster Hunter Freedom Unite for iOS para iPhone">
+                        <strong>
+                            Monster Hunter Freedom Unite for iOS
+                        </strong>
+                    </a>
+                    (Action-RPG / MMORPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/iphone/monster-hunter-freedom-unite-for-ios/24709#p-53">
+                            <span class="color53">
+                                iPhone
+                            </span>
+                        </a>
+                        · 3/7/2014
+                    </div>
+                </div>
+                <div class="mt05">
+                    El juego de PSP se adapta a iOS. Esta versión incorpora controles adaptados a la
+                    pantalla táctil y que simplifica acciones complejas para no poner trabas al progreso del
+                    jugador. Asimismo, incluye funciones diseñadas para ayudarte mientras cazas, como la cámara
+                    objetivo, que mantiene a los monstruos en tu campo de visión, y los iconos emergentes, que te
+                    señalan cuándo puedes interactuar con el entorno. Los gráficos se han mejorado, adaptándolos a
+                    la resolución de los dispositivos de Apple, y permite jugar con hasta cuatro usuarios.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20131231">
+                2013
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-4/15032">
+                            <img style="width:100px; height:88px"
+                                src="https://media.vandal.net/100/15032/monster-hunter-4-201472311042_1b.jpg"
+                                width="100" alt="Monster Hunter 4 para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-4/15032" title="Monster Hunter 4 para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter 4
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-4/15032#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        · Año 2013
+                    </div>
+                </div>
+                <div class="mt05">
+                    Esta saga de rol y acción llega a su cuarta entrega en exclusiva para la Nintendo
+                    3DS. El título destaca por ofrecer una serie de entornos jugables mucho mayores a los de sus
+                    antecesores, un punto de plataformas, nuevos enemigos y una inteligencia artificial mucho más
+                    elaborada para los enemigos. Además de ello Monster Hunter 4 también incorpora un modo online
+                    para explotar al máximo la combinación de grandes bestias y enormes localizaciones en las que
+                    sacar al cazador que el jugador lleva dentro.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20131231">
+                2013
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627">
+                            <img style="width:100px; height:142px"
+                                src="https://media.vandal.net/100/21756/monster-hunter-frontier-g-2015122114528_1b.jpg"
+                                width="100" alt="Monster Hunter Frontier Z para PlayStation 4">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps4/monster-hunter-frontier-z/41627"
+                        title="Monster Hunter Frontier Z para PlayStation 4">
+                        <strong>
+                            Monster Hunter Frontier G
+                        </strong>
+                    </a>
+                    (Action-RPG / MMO)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627#p-67">
+                            <span class="color67">
+                                WiiU
+                            </span>
+                        </a>
+                        <a href="/juegos/ps4/monster-hunter-frontier-z/41627#p-41">
+                            <span class="color41">
+                                PS3
+                            </span>
+                        </a>
+                        · Año 2013
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Frontier es un juego online que nunca ha conseguido salir de Japón
+                    y cuya última expansión incluyó más monstruos, armas, armaduras, escenarios y habilidades. En
+                    Japón es un título que requiere de cuotas mensuales y Capcom quiere lanzarlo en Occidente en un
+                    futuro.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20131231">
+                2013
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/android/monster-hunter-massive-hunting/16629">
+                            <img style="width:100px; height:100px"
+                                src="https://media.vandal.net/100/16626/monster-hunter-massive-hunting-20151218185015_6b.jpg"
+                                width="100" alt="Monster Hunter: Massive Hunting para Android">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/android/monster-hunter-massive-hunting/16629"
+                        title="Monster Hunter: Massive Hunting para Android">
+                        <strong>
+                            Monster Hunter: Massive Hunting
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/android/monster-hunter-massive-hunting/16629#p-53">
+                            <span class="color53">
+                                iPhone
+                            </span>
+                        </a>
+                        <a href="/juegos/android/monster-hunter-massive-hunting/16629#p-71">
+                            <span class="color71">
+                                Android
+                            </span>
+                        </a>
+                        · Año 2013
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20130831">
+                2013
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/pc/monster-hunter-online/20965">
+                            <img style="width:100px; height:79px"
+                                src="https://media.vandal.net/100/20965/monster-hunter-online-20134181039_1b.jpg"
+                                width="100" alt="Monster Hunter Online para Ordenador">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/pc/monster-hunter-online/20965" title="Monster Hunter Online para Ordenador">
+                        <strong>
+                            Monster Hunter Online
+                        </strong>
+                    </a>
+                    (Action-RPG / MMO)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/pc/monster-hunter-online/20965#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · Agosto 2013
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Online es un juego de rol masivo multijugador online desarrollado
+                    por la compañía china Tencent y especialmente orientado al mercado asiático. Es un juego
+                    free-to-play con micropagos que usa el motor gráfico CryENGINE 3 para llevarnos a un mundo
+                    persistente donde los cazadores de monstruos compiten y colaboran para acabar con gigantescos
+                    enemigos.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20130322">
+                2013
+            </td>
+            <td data-ordenar="8">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/3ds/monster-hunter-3-ultimate/15009">
+                            <img style="width:100px; height:89px"
+                                src="https://media.vandal.net/100/15009/20134710559_1b.jpg" width="100"
+                                alt="Monster Hunter 3 Ultimate para Nintendo 3DS">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/3ds/monster-hunter-3-ultimate/15009">
+                                    8
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/3ds/monster-hunter-3-ultimate/15009"
+                        title="Monster Hunter 3 Ultimate para Nintendo 3DS">
+                        <strong>
+                            Monster Hunter 3 Ultimate
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/3ds/monster-hunter-3-ultimate/15009#p-47">
+                            <span class="color47">
+                                3DS
+                            </span>
+                        </a>
+                        <a href="/juegos/3ds/monster-hunter-3-ultimate/15009#p-67">
+                            <span class="color67">
+                                WiiU
+                            </span>
+                        </a>
+                        · 22/3/2013
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Tri G es una adaptación para Nintendo 3DS del Monster Hunter Tri
+                    lanzado para Wii en el año 2010. Plantea a los jugadores cazar monstruos mientras mejoras tu
+                    personaje y tus armas. Esta versión para Nintendo 3DS cuenta con nuevo contenido respecto al
+                    original, y aprovecha la pantalla táctil para mostrarnos el mapa o el inventario, entre otras
+                    opciones. También cuenta con efecto 3D sin gafas, y utilizará un accesorio para la consola que
+                    le dota de un stick analógico más y de un botón extra, que se venderá por separado.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20121231">
+                2012
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monster-hunter-portable-3-g/15520">
+                            <img style="width:100px; height:171px"
+                                src="https://media.vandal.net/100/15520/monster-hunter-portable-3-g-2014123175026_1b.jpg"
+                                width="100" alt="Monster Hunter Portable 3 G para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monster-hunter-portable-3-g/15520"
+                        title="Monster Hunter Portable 3 G para PSP">
+                        <strong>
+                            Monster Hunter Portable 3 G
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunter-portable-3-g/15520#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · Año 2012
+                    </div>
+                </div>
+                <div class="mt05">
+                    La popular saga, que goza de un tremendísimo éxito en Japón, expande las
+                    posibilidades del episodio llamado Monster Hunter Portable 3, por el momento, únicamente en el
+                    país nipón. Esta versión ofrecerá los mismos contenidos del original, pero incluirá 12 nuevos
+                    tipos armas y animaciones respecto a Monster Hunter Portable 3, nuevos monstruos y nuevos tipos
+                    de daño.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20111231">
+                2011
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monster-hunter-freedom-3/12241">
+                            <img style="width:100px; height:175px"
+                                src="https://media.vandal.net/100/12241/monster-hunter-freedom-3-2014130161234_1b.jpg"
+                                width="100" alt="Monster Hunter Freedom 3 para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monster-hunter-freedom-3/12241" title="Monster Hunter Freedom 3 para PSP">
+                        <strong>
+                            Monster Hunter Freedom 3
+                        </strong>
+                    </a>
+                    (Action-RPG / Roguelike)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunter-freedom-3/12241#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · Año 2011
+                    </div>
+                </div>
+                <div class="mt05">
+                    El popular juego de cazadores de monstruos se renueva en PlayStation Portable, con
+                    este título que en su momento batió todos los récords en la portátil de Sony. Con siempre, se
+                    mantendrán sus señas de identidad: gigantescas criaturas que derrotar, vastas extensiones de
+                    terreno que explorar y amplias opciones de personalización para nuestros personajes
+                    protagonistas y, sobre todo, mucha, mucha acción.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20111231">
+                2011
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps3/monster-hunter-portable-3rd-hd/14414">
+                            <img style="width:100px; height:115px"
+                                src="https://media.vandal.net/100/14414/monster-hunter-portable-3rd-hd-20151218174929_1b.jpg"
+                                width="100" alt="Monster Hunter Portable 3rd HD para PlayStation 3">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps3/monster-hunter-portable-3rd-hd/14414"
+                        title="Monster Hunter Portable 3rd HD para PlayStation 3">
+                        <strong>
+                            Monster Hunter Portable 3rd HD
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps3/monster-hunter-portable-3rd-hd/14414#p-41">
+                            <span class="color41">
+                                PS3
+                            </span>
+                        </a>
+                        · Año 2011
+                    </div>
+                </div>
+                <div class="mt05">
+                    Este título es el remake del exitoso Monster Hunter Portable para la portátil de
+                    Sony que ahora llega a PlayStation 3. En esta ocasión Capcom ha realizado una revisión total de
+                    gráficos, ofreciéndolos en full HD y permitiendo el juego entre portátil y consola de sobremesa
+                    además del modo online. En lo jugable esta edición del juego incluye regiones renovadas, nuevos
+                    monstruos y el sistema de combate Felyne totalmente remozado.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20111231">
+                2011
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monhan-nikki-pokapoka-airumura-g/14244">
+                            <img style="width:100px; height:173px"
+                                src="https://media.vandal.net/100/14244/monhan-nikki-pokapoka-airumura-g-2014130161122_1b.jpg"
+                                width="100" alt="Monhan Nikki: Pokapoka Airu-mura G para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monhan-nikki-pokapoka-airumura-g/14244"
+                        title="Monhan Nikki: Pokapoka Airu-mura G para PSP">
+                        <strong>
+                            Monhan Nikki: Pokapoka Airu-mura G
+                        </strong>
+                    </a>
+                    (Acción / Arcade)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monhan-nikki-pokapoka-airumura-g/14244#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · Año 2011
+                    </div>
+                </div>
+                <div class="mt05">
+                    Este juego nos pone a los mandos de un Felyne, la especie felina del mundo de
+                    Monster Hunter, y habrá que superar misiones, y conseguir a más y más habitantes para la ciudad
+                    que estamos construyendo. Es la continuación del juego que mezcla el universo de la mencionada
+                    saga con el estilo de Animal Crossing, y ofrece nuevos contenidos como más personajes, nuevos
+                    edificios, y más misiones y monstruos extraídos de la saga principal de Monster Hunter.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20110601">
+                2011
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/iphone/monster-hunter-dynamic-hunting/14389">
+                            <img style="width:100px; height:100px"
+                                src="https://media.vandal.net/100/14389/201162513459_1b.jpg" width="100"
+                                alt="Monster Hunter: Dynamic Hunting para iPhone">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/iphone/monster-hunter-dynamic-hunting/14389"
+                        title="Monster Hunter: Dynamic Hunting para iPhone">
+                        <strong>
+                            Monster Hunter: Dynamic Hunting
+                        </strong>
+                    </a>
+                    (Action-RPG / Hack and Slash)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/iphone/monster-hunter-dynamic-hunting/14389#p-53">
+                            <span class="color53">
+                                iPhone
+                            </span>
+                        </a>
+                        · 1/6/2011
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Dynamic Hunter es una versión para iPhone del popular éxito de
+                    Capcom en consola. Funciona a partir de iPhone 3GS y de iPod touch cuarta generación. Como en el
+                    original, tendremos que salir a la caza de monstruos para acabar con ellos, usando un mando
+                    virtual para movernos, atacando pulsando la pantalla, deslizando el dedo para realizar ataques y
+                    usando dos dedos para esquivar y cubrirnos, y también para contraatacar. Hay cuatro tipos de
+                    armas (espada y escudo, gran espada, doble espada y martillo) para elegir, además de poder
+                    personalizarlas y usar todo tipo de armaduras. Un total de 60 armas que encontrar en el juego, e
+                    incluye un modo cooperativo para dos jugadores, pero limitado a conexión por Bluetooth.
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td data-ordenar="20101231">
+                2010
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/x360/monster-hunter-frontier-online/11941">
+                            <img style="width:100px; height:141px"
+                                src="https://media.vandal.net/100/11941/monster-hunter-frontier-online-201449111833_1b.jpg"
+                                width="100" alt="Monster Hunter Frontier Online para Xbox 360">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/x360/monster-hunter-frontier-online/11941"
+                        title="Monster Hunter Frontier Online para Xbox 360">
+                        <strong>
+                            Monster Hunter Frontier Online
+                        </strong>
+                    </a>
+                    (Action-RPG / MMORPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/x360/monster-hunter-frontier-online/11941#p-37">
+                            <span class="color37">
+                                X360
+                            </span>
+                        </a>
+                        · Año 2010
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20101231">
+                2010
+            </td>
+            <td data-ordenar="0">
+                <div>
+                    <div class="containerNota">
+                        <div class="fleft pr1">
+                            <a href=""></a>
+                        </div>
+                        <div class="fright">
+                            <div class="circuloanalisis_saga">
+                                <div class="notaJuego">
+                                    <a href="">
+                                        N/A
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/juegos/psp/monster-hunters-nikki-poka-poka-airu-mura/11605"
+                        title="Monster Hunters: Nikki Poka Poka Airu Mura para PSP">
+                        <strong>
+                            Monster Hunters: Nikki Poka Poka Airu Mura
+                        </strong>
+                    </a>
+                    (Simulación / Simulador de vida)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunters-nikki-poka-poka-airu-mura/11605#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · Año 2010
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20100423">
+                2010
+            </td>
+            <td data-ordenar="9.3">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/wii/monster-hunter-tri/7945">
+                            <img style="width:100px; height:140px"
+                                src="https://media.vandal.net/100/7945/2011528103158_1b.jpg" width="100"
+                                alt="Monster Hunter Tri para Wii">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/wii/monster-hunter-tri/7945">
+                                    9.3
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/wii/monster-hunter-tri/7945" title="Monster Hunter Tri para Wii">
+                        <strong>
+                            Monster Hunter Tri
+                        </strong>
+                    </a>
+                    (Action-RPG / MMO)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/wii/monster-hunter-tri/7945#p-43">
+                            <span class="color43">
+                                WII
+                            </span>
+                        </a>
+                        · 23/4/2010
+                    </div>
+                </div>
+                <div class="mt05">
+                    Monster Hunter Tri se localiza en un vasto mundo en el que el jugador se pondrá en
+                    la piel de un cazador que lucha por defender a sus conciudadanos de las garras de los temibles
+                    monstruos que acechan la aldea. Esta historia de acción y supervivencia permite sacar el máximo
+                    partido al WiiMote y el nunchuck además de permitir el juego con el mando clásico o pro. Una
+                    aventura cargada de gráficos de gran calidad y un entorno dinámico que está siempre en
+                    expansión.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20091231">
+                2009
+            </td>
+            <td data-ordenar="0">
+                <div>
+                    <div class="containerNota">
+                        <div class="fleft pr1">
+                            <a href=""></a>
+                        </div>
+                        <div class="fright">
+                            <div class="circuloanalisis_saga">
+                                <div class="notaJuego">
+                                    <a href="">
+                                        N/A
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/juegos/wii/monster-hunter-g/8051" title="Monster Hunter G para Wii">
+                        <strong>
+                            Monster Hunter G
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/wii/monster-hunter-g/8051#p-43">
+                            <span class="color43">
+                                WII
+                            </span>
+                        </a>
+                        · Año 2009
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20090626">
+                2009
+            </td>
+            <td data-ordenar="8.5">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monster-hunter-freedom-unite/7889">
+                            <img style="width:100px; height:171px"
+                                src="https://media.vandal.net/100/7889/2009714141933_1b.jpg" width="100"
+                                alt="Monster Hunter Freedom Unite para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a
+                                    href="https://vandal.elespanol.com/analisis/psp/monster-hunter-freedom-unite/7889">
+                                    8.5
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monster-hunter-freedom-unite/7889"
+                        title="Monster Hunter Freedom Unite para PSP">
+                        <strong>
+                            Monster Hunter Freedom Unite
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunter-freedom-unite/7889#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · 26/6/2009
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20071231">
+                2007
+            </td>
+            <td data-ordenar="0">
+                <div>
+                    <div class="containerNota">
+                        <div class="fleft pr1">
+                            <a href=""></a>
+                        </div>
+                        <div class="fright">
+                            <div class="circuloanalisis_saga">
+                                <div class="notaJuego">
+                                    <a href="">
+                                        N/A
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/juegos/pc/monster-hunter-frontier/7148"
+                        title="Monster Hunter Frontier para Ordenador">
+                        <strong>
+                            Monster Hunter Frontier
+                        </strong>
+                    </a>
+                    (Action-RPG / MMO)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/pc/monster-hunter-frontier/7148#p-13">
+                            <span class="color13">
+                                PC
+                            </span>
+                        </a>
+                        · Año 2007
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20070907">
+                2007
+            </td>
+            <td data-ordenar="8.1">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monster-hunter-freedom-2/5955">
+                            <img style="width:100px; height:171px"
+                                src="https://media.vandal.net/100/5955/monster-hunter-freedom-2-20196171619119_1b.jpg"
+                                width="100" alt="Monster Hunter Freedom 2 para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/psp/monster-hunter-freedom-2/5955">
+                                    8.1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monster-hunter-freedom-2/5955" title="Monster Hunter Freedom 2 para PSP">
+                        <strong>
+                            Monster Hunter Freedom 2
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunter-freedom-2/5955#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · 7/9/2007
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20061231">
+                2006
+            </td>
+            <td data-ordenar="0">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps2/monster-hunter-2/4810">
+                            <img style="width:100px; height:139px"
+                                src="https://media.vandal.net/100/4810/monster-hunter-2-2014317121457_1b.jpg"
+                                width="100" alt="Monster Hunter 2 para PlayStation 2">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_nota">
+                            <div class="notaJuego">
+                                <a href="">
+                                    N/A
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps2/monster-hunter-2/4810" title="Monster Hunter 2 para PlayStation 2">
+                        <strong>
+                            Monster Hunter 2
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps2/monster-hunter-2/4810#p-2">
+                            <span class="color2">
+                                PS2
+                            </span>
+                        </a>
+                        · Año 2006
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20060512">
+                2006
+            </td>
+            <td data-ordenar="7.1">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/psp/monster-hunter-freedom/4784">
+                            <img style="width:100px; height:171px"
+                                src="https://media.vandal.net/100/4784/20066211329_1b.jpg" width="100"
+                                alt="Monster Hunter Freedom para PSP">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/psp/monster-hunter-freedom/4784">
+                                    7.1
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/psp/monster-hunter-freedom/4784" title="Monster Hunter Freedom para PSP">
+                        <strong>
+                            Monster Hunter Freedom
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/psp/monster-hunter-freedom/4784#p-23">
+                            <span class="color23">
+                                PSP
+                            </span>
+                        </a>
+                        · 12/5/2006
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td data-ordenar="20050525">
+                2005
+            </td>
+            <td data-ordenar="6.3">
+                <div class="containerNota">
+                    <div class="fleft pr1">
+                        <a href="/juegos/ps2/monster-hunter/2955">
+                            <img style="width:100px; height:141px"
+                                src="https://media.vandal.net/100/2955/200562221453_1b.jpg" width="100"
+                                alt="Monster Hunter para PlayStation 2">
+                        </a>
+                    </div>
+                    <div class="fright">
+                        <div class="circuloanalisis_saga">
+                            <div class="notaJuego">
+                                <a href="https://vandal.elespanol.com/analisis/ps2/monster-hunter/2955">
+                                    6.3
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="/juegos/ps2/monster-hunter/2955" title="Monster Hunter para PlayStation 2">
+                        <strong>
+                            Monster Hunter
+                        </strong>
+                    </a>
+                    (Action-RPG)
+                </div>
+                <div class="mt05">
+                    <div>
+                        <a href="/juegos/ps2/monster-hunter/2955#p-61">
+                            <span class="color61">
+                                PSVITA
+                            </span>
+                        </a>
+                        · Rumoreado/Nunca existió
+                    </div>
+                    <div>
+                        <a href="/juegos/ps2/monster-hunter/2955#p-2">
+                            <span class="color2">
+                                PS2
+                            </span>
+                        </a>
+                        · 25/5/2005
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
+
+{% block footer %}
+<div class="mt-5 p-4 bg-dark text-white text-center">
+    <p>Monster Hunter Hub</p>
+</div>
+{% endblock %}
