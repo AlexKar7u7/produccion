@@ -57,3 +57,4 @@ jobs:
              ${{ secrets.REGISTRY_USERNAME }}/flask-server:latest
              ${{ secrets.REGISTRY_USERNAME }}/flask-server:${{ env.VERSION }}
             
+#
